@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">AD3</string>
+    <string name="empresa_name">UNISUL</string>
+    <string name="Login">AD3 - Login</string>
+
+    <!-- Strings Login e Registro -->
+    <string name="nomecompleto">Nome Completo</string>
+    <string name="email">E-Mail</string>
+    <string name="senha">Senha</string>
+    <string name="cpf">CPF</string>
+    <string name="rg">RG</string>
+    <string name="datanascimento">Data de Nascimento</string>
+    <string name="endereco">Endereço</string>
+    <string name="telefone">Telefone</string>
+    <string name="botao_registrar">Registrar-se</string>
+    <string name="campos_vazios">Preencha todos os campos!</string>
+
+    <!-- Strings Login -->
+    <string name="entrar_titulo">ENTRAR</string>
+    <string name="entrar_sucesso">Entrou com sucesso!</string>
+    <string name="entrar_email_invalido">E-mail inválido!</string>
+    <string name="entrar_senha_invalida">Senha inválida!</string>
+    <string name="entrar_falha_geral">O login falhou, tente novamente mais tarde!</string>
+    <string name="entrar">Entrar</string>
+
+    <!-- Strings Registro -->
+    <string name="registro_titulo">REGISTRO</string>
+    <string name="registro_infos_login">Informações de Login</string>
+    <string name="registro_pessoais">Informações Pessoais</string>
+    <string name="registro_sucesso">Registrado com sucesso!</string>
+    <string name="registro_falha_geral">"O registro falhou, tente novamente mais tarde!"</string>
+    <string name="registro_falha_email">E-mail inválido ou em uso!</string>
+    <string name="registro_falha_cpf">CPF inválido ou em uso!</string>
+    <string name="registro_falha_rg">RG inválido ou em uso!</string>
+    <string name="registro_entrar">Já tenho uma conta</string>
+
+    <!-- Strings Inicio -->
+    <string name="inicio_titulo">INICIO</string>
+
+    <!-- Strings Menu -->
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_denuncias">Denúncias</string>
+    <string name="menu_configuracoes">Configurações</string>
+    <string name="menu_sair">Sair</string>
+    <string name="menu_nomecompleto">Nome Completo</string>
+    <string name="menu_email">email@email.com</string>
+    <string name="title_activity_class_inicio">Inicio</string>
+    <string name="menu_botao_sair">Desconectado com sucesso!</string>
+
+    <!-- Strings Nav -->
+    <string name="nav_ID">ID</string>
+    <string name="nav_Nome">Nome</string>
+    <string name="nav_EMail">E-Mail</string>
+    <string name="nav_Sair">Sair</string>
+
+    <!-- Strings -->
+    <string name="erro">Ocorreu um erro!</string>
+    <string name="erro_qual">Ocorreu um erro:</string>
+
+</resources>

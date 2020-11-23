@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.unisul.ad3.MainCadastro">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorBlack"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
+                android:text="@string/registro_pessoais"/>
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/registro_campo_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/campo_customizado"
+                android:hint="@string/cpf"
+                app:met_mask="###.###.###-##"
+                android:inputType="number" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/registro_campo_rg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/campo_customizado"
+                android:hint="@string/rg"
+                app:met_mask="#.###.###"
+                android:inputType="number" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/registro_campo_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/campo_customizado"
+                android:hint="@string/endereco"
+                android:inputType="textLongMessage" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/registro_campo_telefone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/campo_customizado"
+                android:hint="@string/telefone"
+                app:met_mask="+55 (##) 9 ####-####"
+                android:inputType="phone" />
+        </LinearLayout>
+</LinearLayout>
