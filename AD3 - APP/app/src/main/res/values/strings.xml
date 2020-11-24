@@ -18,6 +18,7 @@
     <!-- Strings Login -->
     <string name="entrar_titulo">ENTRAR</string>
     <string name="entrar_sucesso">Entrou com sucesso!</string>
+    <string name="entrar_erro">E-mail ou senha inválidos ou sem conexão com a internet!</string>
     <string name="entrar_email_invalido">E-mail inválido!</string>
     <string name="entrar_senha_invalida">Senha inválida!</string>
     <string name="entrar_falha_invalido">E-mail ou senha inválidos!</string>
