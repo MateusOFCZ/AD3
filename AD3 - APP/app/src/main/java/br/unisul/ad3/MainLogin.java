@@ -77,7 +77,7 @@ public class MainLogin extends AppCompatActivity {
                                     Toast.makeText(MainLogin.this, MainLogin.this.getString(R.string.erro), Toast.LENGTH_LONG).show();
                                 }
                             } catch (Exception erro) {
-                                Toast.makeText(MainLogin.this, MainLogin.this.getString(R.string.erro_qual) + " " + erro, Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainLogin.this, MainLogin.this.getString(R.string.entrar_erro), Toast.LENGTH_LONG).show();
                             }
                         }
                     });
