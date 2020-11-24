@@ -20,6 +20,7 @@
     <string name="entrar_sucesso">Entrou com sucesso!</string>
     <string name="entrar_email_invalido">E-mail inválido!</string>
     <string name="entrar_senha_invalida">Senha inválida!</string>
+    <string name="entrar_falha_invalido">E-mail ou senha inválidos!</string>
     <string name="entrar_falha_geral">O login falhou, tente novamente mais tarde!</string>
     <string name="entrar">Entrar</string>
 
