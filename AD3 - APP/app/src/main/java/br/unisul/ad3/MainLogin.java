@@ -51,7 +51,7 @@ public class MainLogin extends AppCompatActivity {
                                 String DADOEMAIL = result.get("E-Mail").getAsString();
 
                                 if(RESULTADO.equals("LOGIN_ERRO")) {
-                                    Toast.makeText(MainLogin.this, MainLogin.this.getString(R.string.entrar_email_invalido), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainLogin.this, MainLogin.this.getString(R.string.entrar_falha_invalido), Toast.LENGTH_LONG).show();
                                     entrar_campo_email.setText("");
                                     entrar_campo_senha.setText("");
                                     entrar_campo_email.requestFocus();
