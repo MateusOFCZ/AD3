@@ -1,5 +1,3 @@
-# Avaliação à Distância 3 - UNISUL
-
 # GitHub
 O objetivo deste guia é ajudá-lo(a) com o GitHub e GitHub Desktop, uma maneira fácil de gerenciar os projetos sem a necessidade da utilização de linhas de comandos.
 
@@ -9,24 +7,20 @@ Para começar, baixe o [GitHub Desktop](https://desktop.github.com/), com ele vo
 ## Começando com o GitHub Desktop
 Para começar, é necessário fazer o login no GitHub Desktop, caso você tenha se deparado com uma tela como a demonstrada abaixo, ou não sabe como fazer o login, siga os passos descritos logo abaixo da imagem.
 
+
 ![Primeira vez no GitHub Desktop](https://i.imgur.com/E0hgX12.png)
-
-
 Se após abrir o GitHub desktop você foi direto para essa tela, é necessário fazer o login indo no menu superior no lado esquerdo em "File", selecione "Options...", veja abaixo:
 
 ![File > Options](https://i.imgur.com/kKvRrTX.png)
 
 
 Depois vá em "Accounts" e clique em "Sign In" ao lado de "GitHub.com":
-
 ![Accounts > Sign In](https://i.imgur.com/XvawbfZ.png)
 
 
 Aparecerá uma nova tela, clique em "Continue with browser", você será redirecionado para um "oAuth" do GitHub para permitir o GitHub Desktop o acesso a conta, pode ser necessário aguardar alguns segundos:
 
 ![Continue with browser > Authorize desktop](https://i.imgur.com/lx9UuJb.png)
-
-
 Assim que liberar, clique em "Authorize desktop", dessa forma você irá autorizar o GitHub Desktop o acesso a sua conta. Lembre-se que pode ser necessário inserir a senha para confirmar.
 
 ## Clonando o projeto
@@ -86,7 +80,7 @@ O Commit serve para empacotar todo o código alterado, após finalizar alguma al
 
 ![Edições feitas](https://i.imgur.com/eD5SzMx.png)
 
-Quando algum arquivo é criado, ou feito alguma alteração no código, irá aparecer os arquivos em "Changes", você pode verificar as alterações abrindo o arquivo no menu "Changes", lembre-se que para editar é necessário ir pelo Android Studio.
+Quando algum arquivo é criado, ou feito alguma alteração no código, irá aparecer os arquivos em "Changes", você pode verificar as alterações abrindo o arquivo no menu "Changes", lembre-se que para editar é necessário ir pelo NetBeans.
 
 Se você quiser fazer o Commit de apenas alguns arquivos, deixe selecionado o CheckBox apenas nos arquivos que deseja Commitar, em "Summary (required)", abaixo do nome dos arquivos, você deve colocar um título para a alteração, como no caso demonstrado na imagem, podemos colocar: "Edição de strings":
 
@@ -147,7 +141,9 @@ Você será redirecionado para o GitHub, onde você poderá modificar o título 
 
 
 Após finalizar as modificações de texto, adicione um Reviewer, para isso clique em "Reviwers" e insira o @username do Mateus (@MateusOFCZ):
+
 ![Reviewer Mateus](https://i.imgur.com/zZEMbgT.png)
+
 
 Agora adicione uma Label ao Pull Request, para isso clique em "Labels" e selecione as opções que se aplicam, se necessário, você pode adicionar mais de uma:
 
@@ -181,6 +177,31 @@ Se alguma alteração de código existir, aparecerá "Pull origin", clique nele 
 
 Aguarde, e pronto, o seu repositório local (seu PC), estará atualizado.
 Você pode fazer isso com outras Branchs, mais é recomendado sempre deixar o código atualizado com a Branch principal ("Main" ou "Master"), pois são códigos confiáveis, já que foram revisados e testados, sempre utilize-os para fazer novas modificações ou adicionar novos recursos.
+
+# Abrindo o Projeto do Repositório no NetBeans
+É necessário abrir o projeto clonado, para que qualquer alteração seja Commitada de forma mais fácil, veja os passos de como fazer isso.
+
+Para iniciar, vamos verificar onde o projeto se encontra salvo, para isso, ao abrir o GitHub Desktop, clique em "Show in Explorer":
+
+![Encontrando o projeto](https://i.imgur.com/ICjP8m0.png)
+
+
+Uma pasta será aberta, veja se corresponde ao GitHub, e depois verifique o local em que está armazenada em seu computador, como mostra abaixo:
+
+![Localização do projeto](https://i.imgur.com/sa175Kx.png)
+
+
+No NetBeans, vá em "Arquivo" e depois em "Abrir Projeto...":
+
+![Abrindo o projeto](https://i.imgur.com/hcuoDBw.png)
+
+
+Uma pasta se abrirá, navegue até o local onde o projeto está, caso na instalação você não tenha alterado o local de armazenamento do GitHub Desktop, pode ser que esteja em "Documentos", abra a pasta "GitHub" e localize o projeto, lembre-se de entrar na pasta e navegar até aparecer uma xícara de café como ícone, selecione ele e clique em "Abrir Projeto":
+
+![Importando o projeto](https://i.imgur.com/5psALBe.png)
+
+
+Após a importação, verifique de que esteja tudo funcionando como o esperado, para isso, basta compilar o software. Em caso de erro, tente remover a pasta "AD3" que está localizado na pasta "GitHub" que vimos anteriormente, clone novamente o repositório, se o erro persistir, não deixe de nos avisar.
 
 # Fim
 Você chegou ao fim de como utilizar o GitHub e GitHub Desktop, sempre que precisar, você poderá consultar este guia, e qualquer dúvida, estamos a disposição!
