@@ -335,11 +335,18 @@ public class Registro extends javax.swing.JFrame {
         String Endereco = c_endereco.getText().toString();
         String Telefone = c_telefone.getText().toString();
         String Codigo = c_codigo.getText().toString();
+        boolean Caixa = checkbox.isSelected();
         
-        if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("") || Codigo.equals("")){
+        if(Caixa == true && c_codigo.equals("")) {
+            JOptionPane.showMessageDialog(null, "Insira o código!", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("")){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
         } else {
             RegistroC RegistroC = new RegistroC();
+            
+            RegistroC.Registrar(Email, Senha, Nome, CPF, RG, Endereco, Telefone, Codigo, 0);
         }
     }//GEN-LAST:event_b_cadastrarActionPerformed
 

@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CONTROLLER;
 
-import Model.RegistroM;
-
-/**
- *
- * @author Vinicius
- */
 public class RegistroC {
-    public boolean Verificar(String Email, String CPF, String RG, String Telefone){
-        Model.RegistroM RegistroM = new Model.RegistroM();
-    }
+    Model.RegistroM RegistroM = new Model.RegistroM();
     
+    public void Registrar(String Email, String Senha, String NomeCompleto, String CPF, String RG, String Endereco, String Telefone, String Codigo, int NivelAcesso){
+        RegistroM.Registrar(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, Codigo, NivelAcesso);
+       
+    }
 }
