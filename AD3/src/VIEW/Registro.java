@@ -5,6 +5,7 @@
  */
 package VIEW;
 
+import CONTROLLER.RegistroC;
 import javax.swing.JOptionPane;
 
 /**
@@ -318,6 +319,7 @@ public class Registro extends javax.swing.JFrame {
 
     private void c_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_nomeActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_c_nomeActionPerformed
 
     private void c_rgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_rgActionPerformed
@@ -336,6 +338,8 @@ public class Registro extends javax.swing.JFrame {
         
         if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("") || Codigo.equals("")){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
+        } else {
+            RegistroC RegistroC = new RegistroC();
         }
     }//GEN-LAST:event_b_cadastrarActionPerformed
 
