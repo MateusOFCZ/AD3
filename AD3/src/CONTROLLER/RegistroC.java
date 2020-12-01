@@ -1,7 +1,7 @@
 package CONTROLLER;
 
 public class RegistroC {
-    Model.RegistroM RegistroM = new Model.RegistroM();
+    MODEL.RegistroM RegistroM = new MODEL.RegistroM();
     
     public boolean Registrar (String NomeCompleto, String EMail, String RG, String CPF, String Endereco, String Telefone, String Senha, String Codigo, int NivelAcesso){
         boolean ContaVerificada = RegistroM.VerificarConta(EMail, CPF, RG);

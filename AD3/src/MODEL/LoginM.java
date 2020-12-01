@@ -12,7 +12,7 @@ public class LoginM {
     private static String Endereco;
     private static String Telefone;
     private static String Score;
-    private static String NivelAcesso;
+    private static int NivelAcesso;
 
     public static String getID() {
         return ID;
@@ -85,12 +85,12 @@ public class LoginM {
     public static void setScore(String aScore) {
         Score = aScore;
     }
-
-    public static String getNivelAcesso() {
+    
+    public static int getNivelAcesso() {
         return NivelAcesso;
     }
 
-    public static void setNivelAcesso(String aNivelAcesso) {
+    public static void setNivelAcesso(int aNivelAcesso) {
         NivelAcesso = aNivelAcesso;
     }
     

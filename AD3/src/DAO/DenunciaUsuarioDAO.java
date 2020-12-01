@@ -3,39 +3,26 @@ package DAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class LoginDAO {    
-    public boolean Entrar(String Email, String Senha) {
-        MODEL.LoginM LoginM = new MODEL.LoginM();
-        String SQL = "SELECT * FROM tb_usuario WHERE email = ? and Senha = ?";
-
+public class DenunciaUsuarioDAO {
+    public boolean Denunciar (String Endereco, int Prioridade, String Descricao, int Usuario) {
+        String SQL = "INSERT INTO tb_denuncia (endereco, prioridade, descricao, status, usuario) VALUES (?, ?, ?, ?, ?)";
+        
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(SQL);
-            stmt.setString(1, Email);
-            stmt.setString(2, Senha);
+            stmt.setString(1, Endereco);
+            stmt.setInt(2, Prioridade);
+            stmt.setString(3, Descricao);
+            stmt.setInt(4, 1);
+            stmt.setInt(5, Usuario);
 
-            ResultSet res = stmt.executeQuery();
-            
-            if(res.next()){
-                LoginM.setID(res.getString("id"));
-                LoginM.setEMail(res.getString("email"));
-                LoginM.setSenha(res.getString("senha"));
-                LoginM.setNomeCompleto(res.getString("nome_completo"));
-                LoginM.setCPF(res.getString("cpf"));
-                LoginM.setRG(res.getString("rg"));
-                LoginM.setEndereco(res.getString("endereco"));
-                LoginM.setTelefone(res.getString("telefone"));
-                LoginM.setScore(res.getString("score"));
-                LoginM.setNivelAcesso(res.getInt("nivel_acesso"));
-                
-                return true;
-            }else{
-                JOptionPane.showMessageDialog(null, "Usuário ou Senha inválido!", "Erro", JOptionPane.WARNING_MESSAGE);
-                return false;
-            }
+            stmt.execute();
+            stmt.close();
+
+            JOptionPane.showMessageDialog(null, "Denúncia registrada com sucesso!", "Denúncia", JOptionPane.INFORMATION_MESSAGE);
+            return true;
         } catch (SQLException erro) {
             throw new RuntimeException(erro);
         }

@@ -30,6 +30,11 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AD3");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("E-Mail");
 
@@ -154,8 +159,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void b_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_loginActionPerformed
+        MODEL.LoginM LoginM = new MODEL.LoginM();
         CONTROLLER.LoginC LoginC = new CONTROLLER.LoginC();
-        Inicio Inicio = new Inicio();
+        InicioUsuario InicioUsuario = new InicioUsuario();
+        
         String Login = c_login.getText().toString();
         String Senha = c_senha.getText().toString();
         
@@ -163,15 +170,29 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
         } else {
             boolean Logado = LoginC.Logar(Login, Senha);
+            int NivelAcesso = LoginM.getNivelAcesso();
             
-            if(Logado == true){
+            if(NivelAcesso == 0){
+                JOptionPane.showMessageDialog(null, "Esta conta está suspensa!", "Erro", JOptionPane.WARNING_MESSAGE);
+            }
+            if(NivelAcesso > 0 && NivelAcesso < 2) {
+                if(Logado == true){
                 this.dispose();
-                Inicio.setVisible(true);
-            } else{
-                JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+                InicioUsuario.setVisible(true);
+                } else{
+                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (NivelAcesso >= 2){
+                this.dispose();
+                InicioUsuario.setVisible(true);
             }
         }
     }//GEN-LAST:event_b_loginActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        c_login.setText("ad3@unisul.br");
+        c_senha.setText("4751");
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
