@@ -9,18 +9,24 @@ public class RegistroM {
         CPF = CPF.replaceAll("\\.","");
         CPF = CPF.replaceAll("-","");
         RG = RG.replaceAll("\\.","");
-        Codigo = Codigo.replaceAll("-","");
         
-        boolean Verificado = RegistroDAO.VerificarConta(Email, CPF, RG, Telefone);
+        if(Codigo.equals("")) {
+            boolean Verificado = RegistroDAO.VerificarConta(Email, CPF, RG, Telefone);
         
-        if(Verificado == true && Codigo.equals("")) {
-            Registrar2(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, Codigo, 1);
-        } else if (Verificado == false && !Codigo.equals("")){
-            Registrar1(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, Codigo, NivelAcesso);
+            if(Verificado == true) {
+                Registrar2(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, Codigo, 1);
+            }
+        } else {
+            boolean Verificado = RegistroDAO.VerificarConta(Email, CPF, RG, Telefone);
+        
+            if(Verificado == true) {
+                Registrar1(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, Codigo, 1);
+            }
         }
     }
     
     public void Registrar1 (String Email, String Senha, String NomeCompleto, String CPF, String RG, String Endereco, String Telefone, String Codigo, int NivelAcesso) {
+        System.out.println("Registrar1");
         int Verificado = RegistroDAO.VerificarCodigo(Codigo);
         
         if(Verificado > 0) {
@@ -31,6 +37,7 @@ public class RegistroM {
     }
     
     public void Registrar2 (String Email, String Senha, String NomeCompleto, String CPF, String RG, String Endereco, String Telefone, String Codigo, int NivelAcesso){
+        System.out.println("Registrar2");
         int CodigoAtivo = RegistroDAO.VerificarCodigo(Codigo);
 
         boolean Registrado = RegistroDAO.Registrar(Email, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, CodigoAtivo);
