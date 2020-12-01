@@ -68,11 +68,7 @@
                                   <Component id="c_telefone" min="-2" pref="155" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkbox" min="-2" max="-2" attributes="0"/>
-                                  <Component id="c_codigo" min="-2" pref="81" max="-2" attributes="0"/>
-                                  <Component id="b_salvar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="b_salvar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="c_email" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
@@ -131,18 +127,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="c_endereco" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="c_telefone" linkSize="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="checkbox" min="-2" pref="16" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="c_codigo" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="c_telefone" linkSize="1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -253,14 +240,6 @@
         <Property name="text" type="java.lang.String" value="RG"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkbox">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ADM"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkboxActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="text" type="java.lang.String" value="CPF"/>
@@ -304,13 +283,6 @@
       <Properties>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[15, 24]"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="c_codigo">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="###-###" subtype="-1" type="5"/>
         </Property>
       </Properties>
     </Component>

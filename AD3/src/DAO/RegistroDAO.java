@@ -100,6 +100,31 @@ public class RegistroDAO {
             stmt.execute();
             stmt.close();
 
+            JOptionPane.showMessageDialog(null, "Registrado com sucesso!", "Registrado", JOptionPane.INFORMATION_MESSAGE);
+            return true;
+        } catch (SQLException erro) {
+            throw new RuntimeException(erro);
+        }
+    }
+    
+    public boolean Registrar(String Email, String Senha, String NomeCompleto, String CPF, String RG, String Endereco, String Telefone) {
+        String SQL = "INSERT INTO tb_usuario (email, senha, nome_completo, cpf, rg, endereco, telefone, nivel_acesso) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement stmt = this.getConexao().prepareStatement(SQL);
+            stmt.setString(1, Email);
+            stmt.setString(2, Senha);
+            stmt.setString(3, NomeCompleto);
+            stmt.setString(4, CPF);
+            stmt.setString(5, RG);
+            stmt.setString(6, Endereco);
+            stmt.setString(7, Telefone);
+            stmt.setInt(8, 1);
+
+            stmt.execute();
+            stmt.close();
+
+            JOptionPane.showMessageDialog(null, "Registrado com sucesso!", "Registrado", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } catch (SQLException erro) {
             throw new RuntimeException(erro);
@@ -123,19 +148,19 @@ public class RegistroDAO {
             connection = DriverManager.getConnection(url, user, password);
 
             if (connection != null) {
-                System.out.println("Status: CN000"); // Conectado
+                System.out.println("Status: Conectado");
             } else {
-                JOptionPane.showConfirmDialog(null, "Erro: CN001", "Status", JOptionPane.ERROR_MESSAGE); // Não Foi Possível Conectar
+                JOptionPane.showMessageDialog(null, "Erro: Não foi possível conectar!", "Status", JOptionPane.ERROR_MESSAGE);
             }
 
             return connection;
 
         } catch (ClassNotFoundException e) {
-            JOptionPane.showConfirmDialog(null, "Erro: CN002", "Status", JOptionPane.ERROR_MESSAGE); // Driver Não Encontrado
+            JOptionPane.showMessageDialog(null, "Erro: Driver não encontrado!", "Status", JOptionPane.ERROR_MESSAGE);
             return null;
 
         } catch (SQLException e) {
-            JOptionPane.showConfirmDialog(null, "Erro: CN003", "Status", JOptionPane.ERROR_MESSAGE); // Driver Não Foi Possível Conectar
+            JOptionPane.showMessageDialog(null, "Erro: Driver Não Foi Possível Conectar", "Status", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }

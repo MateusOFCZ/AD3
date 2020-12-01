@@ -7,8 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class LoginDAO {
-    public String Entrar(String Email, String Senha) {
+public class LoginDAO {    
+    public boolean Entrar(String Email, String Senha) {
+        MODEL.LoginM LoginM = new MODEL.LoginM();
         String SQL = "SELECT * FROM tb_usuario WHERE email = ? and Senha = ?";
 
         try {
@@ -19,19 +20,21 @@ public class LoginDAO {
             ResultSet res = stmt.executeQuery();
             
             if(res.next()){
-                if(res.getString("nivel_acesso").equals("") || res.getString("nivel_acesso").equals("0") || res.getString("nivel_acesso") == null || res.getString("nivel_acesso") == "1"){
-                    JOptionPane.showMessageDialog(null, "Esta conta não tem permissão para acessar o sistema!", "Erro", JOptionPane.WARNING_MESSAGE);
-                    return null;
-                } else {
-                    /*MODEL.AD3Panel AD3Panel = new MODEL.AD3Panel();
-                    AD3Panel.setNivelAcesso(res.getInt("nivel_acesso"));
-                    AD3Panel.setEMail(res.getString("email"));
-                    AD3Panel.setID(res.getString("id"));*/
-                    return res.getString("id");
-                }
+                LoginM.setID(res.getString("id"));
+                LoginM.setEMail(res.getString("email"));
+                LoginM.setSenha(res.getString("senha"));
+                LoginM.setNomeCompleto(res.getString("nome_completo"));
+                LoginM.setCPF(res.getString("cpf"));
+                LoginM.setRG(res.getString("rg"));
+                LoginM.setEndereco(res.getString("endereco"));
+                LoginM.setTelefone(res.getString("telefone"));
+                LoginM.setScore(res.getString("score"));
+                LoginM.setNivelAcesso(res.getString("nivel_acesso"));
+                
+                return true;
             }else{
                 JOptionPane.showMessageDialog(null, "Usuário ou Senha inválido!", "Erro", JOptionPane.WARNING_MESSAGE);
-                return null;
+                return false;
             }
         } catch (SQLException erro) {
             throw new RuntimeException(erro);
@@ -55,19 +58,19 @@ public class LoginDAO {
             connection = DriverManager.getConnection(url, user, password);
 
             if (connection != null) {
-                System.out.println("Status: CN000"); // Conectado
+                System.out.println("Status: Conectado");
             } else {
-                JOptionPane.showMessageDialog(null, "Erro: CN001", "Status", JOptionPane.ERROR_MESSAGE); // Não Foi Possível Conectar
+                JOptionPane.showMessageDialog(null, "Erro: Não foi possível conectar!", "Status", JOptionPane.ERROR_MESSAGE);
             }
 
             return connection;
 
         } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Erro: CN002", "Status", JOptionPane.ERROR_MESSAGE); // Driver Não Encontrado
+            JOptionPane.showMessageDialog(null, "Erro: Driver não encontrado!", "Status", JOptionPane.ERROR_MESSAGE);
             return null;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro: CN003", "Status", JOptionPane.ERROR_MESSAGE); // Driver Não Foi Possível Conectar
+            JOptionPane.showMessageDialog(null, "Erro: Driver Não Foi Possível Conectar", "Status", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }

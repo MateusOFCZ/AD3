@@ -41,14 +41,12 @@ public class EditarCadastro extends javax.swing.JFrame {
         b_cancelar = new javax.swing.JButton();
         c_email = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        checkbox = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         c_cpf = new javax.swing.JFormattedTextField();
         c_telefone = new javax.swing.JFormattedTextField();
         c_rg = new javax.swing.JFormattedTextField();
         c_senha = new javax.swing.JPasswordField();
-        c_codigo = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -122,13 +120,6 @@ public class EditarCadastro extends javax.swing.JFrame {
 
         jLabel4.setText("RG");
 
-        checkbox.setText("ADM");
-        checkbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkboxActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("CPF");
 
         jLabel8.setText("Senha");
@@ -160,12 +151,6 @@ public class EditarCadastro extends javax.swing.JFrame {
         });
 
         c_senha.setMinimumSize(new java.awt.Dimension(15, 24));
-
-        try {
-            c_codigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
 
         jMenu1.setText("Menu");
 
@@ -201,10 +186,7 @@ public class EditarCadastro extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(248, 248, 248)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(checkbox)
-                                    .addComponent(c_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(b_salvar)))
+                                .addComponent(b_salvar))
                             .addComponent(jLabel2)
                             .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -251,15 +233,9 @@ public class EditarCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(c_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -297,9 +273,8 @@ public class EditarCadastro extends javax.swing.JFrame {
         String RG = c_rg.getText().toString();
         String Endereco = c_endereco.getText().toString();
         String Telefone = c_telefone.getText().toString();
-        String Codigo = c_codigo.getText().toString();
         
-        if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("") || Codigo.equals("")){
+        if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("")){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_b_salvarActionPerformed
@@ -313,14 +288,6 @@ public class EditarCadastro extends javax.swing.JFrame {
     private void c_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_emailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_c_emailActionPerformed
-
-    private void checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxActionPerformed
-        if (checkbox.isSelected())
-        c_codigo.setVisible(true);
-        else {
-            c_codigo.setVisible(false);
-        }
-    }//GEN-LAST:event_checkboxActionPerformed
 
     private void c_rgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_rgActionPerformed
         // TODO add your handling code here:
@@ -364,7 +331,6 @@ public class EditarCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cancelar;
     private javax.swing.JButton b_salvar;
-    private javax.swing.JFormattedTextField c_codigo;
     private javax.swing.JFormattedTextField c_cpf;
     private javax.swing.JTextField c_email;
     private javax.swing.JTextField c_endereco;
@@ -372,7 +338,6 @@ public class EditarCadastro extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField c_rg;
     private javax.swing.JPasswordField c_senha;
     private javax.swing.JFormattedTextField c_telefone;
-    private javax.swing.JCheckBox checkbox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -114,7 +114,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Login"/>
+        <Property name="text" type="java.lang.String" value="E-Mail"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -134,7 +134,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="b_inscrever">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inscreva-se"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar-se"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_inscreverActionPerformed"/>

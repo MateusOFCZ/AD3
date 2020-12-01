@@ -40,23 +40,26 @@ public class Registro extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         checkbox = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
-        c_codigo = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         c_endereco = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         c_nome = new javax.swing.JTextField();
-        c_cpf = new javax.swing.JFormattedTextField();
-        c_telefone = new javax.swing.JFormattedTextField();
-        c_rg = new javax.swing.JFormattedTextField();
         b_cadastrar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        c_rg = new javax.swing.JTextField();
+        c_telefone = new javax.swing.JTextField();
+        c_cpf = new javax.swing.JTextField();
+        c_codigo = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setName("Registro"); // NOI18N
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -76,7 +79,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +108,7 @@ public class Registro extends javax.swing.JFrame {
 
         jLabel4.setText("RG");
 
-        checkbox.setText("ADM");
+        checkbox.setText("Colaborador");
         checkbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkboxActionPerformed(evt);
@@ -113,12 +116,6 @@ public class Registro extends javax.swing.JFrame {
         });
 
         jLabel5.setText("CPF");
-
-        try {
-            c_codigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
 
         jLabel6.setText("Endereço");
 
@@ -135,32 +132,6 @@ public class Registro extends javax.swing.JFrame {
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
-            }
-        });
-
-        try {
-            c_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        c_cpf.setToolTipText("");
-
-        try {
-            c_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55(##)9####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        c_telefone.setMinimumSize(new java.awt.Dimension(15, 24));
-
-        try {
-            c_rg.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#.###.###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        c_rg.setToolTipText("");
-        c_rg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_rgActionPerformed(evt);
             }
         });
 
@@ -197,38 +168,39 @@ public class Registro extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
                     .addComponent(c_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(248, 248, 248)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkbox)
-                            .addComponent(c_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel2)
                     .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(403, 403, 403)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(c_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel4)
-                    .addComponent(c_rg, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(c_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(c_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(b_cancelar)
                         .addGap(150, 150, 150)
-                        .addComponent(b_cadastrar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_cadastrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(c_rg, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(c_telefone, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(c_senha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
+                        .addGap(282, 282, 282)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(c_cpf)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(checkbox)
+                                    .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(c_codigo))))
+                .addGap(20, 20, 20)
                 .addComponent(jLabel8)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,28 +230,30 @@ public class Registro extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(c_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(c_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(c_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(c_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(b_cadastrar)
-                            .addComponent(b_cancelar))))
+                                .addComponent(c_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(b_cadastrar)
+                                    .addComponent(b_cancelar)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(c_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(117, 117, 117)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -297,8 +271,8 @@ public class Registro extends javax.swing.JFrame {
 
     private void b_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelarActionPerformed
         this.setVisible(false);
-        Login login = new Login();
-        login.setVisible(true);
+        Login Login = new Login();
+        Login.setVisible(true);
     }//GEN-LAST:event_b_cancelarActionPerformed
 
     private void c_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_emailActionPerformed
@@ -310,6 +284,7 @@ public class Registro extends javax.swing.JFrame {
         c_codigo.setVisible(true);
         else {
             c_codigo.setVisible(false);
+            c_codigo.setText("");
         }
     }//GEN-LAST:event_checkboxActionPerformed
 
@@ -322,11 +297,9 @@ public class Registro extends javax.swing.JFrame {
         
     }//GEN-LAST:event_c_nomeActionPerformed
 
-    private void c_rgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_rgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_rgActionPerformed
-
     private void b_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cadastrarActionPerformed
+        Login Login = new Login();
+        
         String Email = c_email.getText().toString();
         String Senha = c_senha.getText().toString();
         String Nome = c_nome.getText().toString();
@@ -334,21 +307,47 @@ public class Registro extends javax.swing.JFrame {
         String RG = c_rg.getText().toString();
         String Endereco = c_endereco.getText().toString();
         String Telefone = c_telefone.getText().toString();
-        String Codigo = c_codigo.getText().toString();
+        String Codigo = c_codigo.getText();
         boolean Caixa = checkbox.isSelected();
+        boolean Cadastrar = true;
         
-        Codigo = Codigo.replaceAll("-","");
+        CPF = CPF.replaceAll("\\.","");
+        CPF = CPF.replaceAll("-","");
+        RG = RG.replaceAll("\\.","");
+        Codigo = Codigo.replaceAll("-", "");
         
-        if(Caixa == true && c_codigo.equals(null)) {
-            JOptionPane.showMessageDialog(null, "Insira o código!", "Erro", JOptionPane.WARNING_MESSAGE);
+        if(Caixa == true && Codigo.equals("") || Caixa == true && Codigo.length() > 6 || Caixa == true && Codigo.length() < 6) {
+            JOptionPane.showMessageDialog(null, "O código deve conter apenas 6 digítos!", "Erro", JOptionPane.WARNING_MESSAGE);
+            Cadastrar = false;
         }
         
-        if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("")){
+        if(CPF.length() > 11 || CPF.length() < 11) {
+            JOptionPane.showMessageDialog(null, "O CPF deve conter apenas 11 digítos!", "Erro", JOptionPane.WARNING_MESSAGE);
+            Cadastrar = false;
+        }
+        
+        if(RG.length() > 7 || RG.length() < 7) {
+            JOptionPane.showMessageDialog(null, "O RG deve conter apenas 7 digítos!", "Erro", JOptionPane.WARNING_MESSAGE);
+            Cadastrar = false;
+        }
+        
+        if(Cadastrar == true){
+            if(Email.equals("") || Senha.equals("") || Nome.equals("") || CPF.equals("") || RG.equals("") || Endereco.equals("") || Telefone.equals("")){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
-        } else {
-            RegistroC RegistroC = new RegistroC();
-            
-            RegistroC.Registrar(Email, Senha, Nome, CPF, RG, Endereco, Telefone, Codigo, 0);
+            } else {
+                RegistroC RegistroC = new RegistroC();
+
+                if(Caixa == true){
+                    boolean Registrado = RegistroC.Registrar(Nome, Email, RG, CPF, Endereco, Telefone, Senha, Codigo, 2);
+                    if(Registrado == true){
+                        this.dispose();
+                        Login.setVisible(true);
+                    }
+                } else if (Caixa == false){
+                    boolean Registrado = RegistroC.Registrar(Nome, Email, RG, CPF, Endereco, Telefone, Senha, Codigo, 1);
+                    Login.setVisible(true);
+                }
+            }
         }
     }//GEN-LAST:event_b_cadastrarActionPerformed
 
@@ -390,14 +389,14 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cadastrar;
     private javax.swing.JButton b_cancelar;
-    private javax.swing.JFormattedTextField c_codigo;
-    private javax.swing.JFormattedTextField c_cpf;
+    private javax.swing.JTextField c_codigo;
+    private javax.swing.JTextField c_cpf;
     private javax.swing.JTextField c_email;
     private javax.swing.JTextField c_endereco;
     private javax.swing.JTextField c_nome;
-    private javax.swing.JFormattedTextField c_rg;
+    private javax.swing.JTextField c_rg;
     private javax.swing.JPasswordField c_senha;
-    private javax.swing.JFormattedTextField c_telefone;
+    private javax.swing.JTextField c_telefone;
     private javax.swing.JCheckBox checkbox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

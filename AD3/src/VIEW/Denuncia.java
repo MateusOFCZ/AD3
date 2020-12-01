@@ -107,7 +107,6 @@ public class Denuncia extends javax.swing.JFrame {
         });
 
         b_descricao.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        b_descricao.setText("Descrição");
         b_descricao.setToolTipText("");
         b_descricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
