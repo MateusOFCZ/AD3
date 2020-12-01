@@ -3,9 +3,9 @@ package MODEL;
 import javax.swing.JOptionPane;
 
 public class RegistroM {
-    DAO.RegistroDAO RegistroDAO = new DAO.RegistroDAO();
     
     public boolean VerificarConta (String EMail, String CPF, String RG) {
+        DAO.RegistroDAO RegistroDAO = new DAO.RegistroDAO();
         boolean Verificado = RegistroDAO.VerificarConta(EMail, CPF, RG, CPF);
         
         if(Verificado == true) {
@@ -16,6 +16,7 @@ public class RegistroM {
     }
     
     public int VerificarCodigo (String Codigo) {
+        DAO.RegistroDAO RegistroDAO = new DAO.RegistroDAO();
         int NivelAcesso = RegistroDAO.VerificarCodigo(Codigo);
         
         if(NivelAcesso > 0) {
@@ -26,11 +27,13 @@ public class RegistroM {
     }
     
     public boolean Registrar (String NomeCompleto, String EMail, String RG, String CPF, String Endereco, String Telefone, String Senha, int NivelAcesso){
+        DAO.RegistroDAO RegistroDAO = new DAO.RegistroDAO();
         boolean Registrado = RegistroDAO.Registrar(EMail, Senha, NomeCompleto, CPF, RG, Endereco, Telefone, NivelAcesso);
         return Registrado;
     }
     
     public boolean Registrar (String NomeCompleto, String EMail, String RG, String CPF, String Endereco, String Telefone, String Senha){
+        DAO.RegistroDAO RegistroDAO = new DAO.RegistroDAO();
         boolean Registrado = RegistroDAO.Registrar(EMail, Senha, NomeCompleto, CPF, RG, Endereco, Telefone);
         return Registrado;
     }

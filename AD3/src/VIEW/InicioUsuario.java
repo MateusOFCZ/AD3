@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package VIEW;
 
-/**
- *
- * @author MarcoJr
- */
 public class InicioUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form DenunciaUsuario
-     */
     public InicioUsuario() {
         initComponents();
     }
@@ -101,6 +90,11 @@ public class InicioUsuario extends javax.swing.JFrame {
         });
 
         jMenuItem2.setText("Sair");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -175,7 +169,6 @@ public class InicioUsuario extends javax.swing.JFrame {
         Texto1 = Texto1.replaceAll("EMAIL", LoginM.getEMail());
         Texto2 = Texto2.replaceAll("SCORE", LoginM.getScore());
         
-        System.out.println(Texto1);
         Texto_BemVindo.setText(Texto1);
         Texto_BemVindo1.setText(Texto2);
     }//GEN-LAST:event_formWindowOpened
@@ -185,6 +178,12 @@ public class InicioUsuario extends javax.swing.JFrame {
         this.dispose();
         Configuracoes.setVisible(true);
     }//GEN-LAST:event_b_configsActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Login Login = new Login();
+        this.dispose();
+        Login.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

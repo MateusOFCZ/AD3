@@ -172,15 +172,12 @@ public class Login extends javax.swing.JFrame {
             boolean Logado = LoginC.Logar(Login, Senha);
             int NivelAcesso = LoginM.getNivelAcesso();
             
-            if(NivelAcesso == 0){
-                JOptionPane.showMessageDialog(null, "Esta conta está suspensa!", "Erro", JOptionPane.WARNING_MESSAGE);
-            }
             if(NivelAcesso > 0 && NivelAcesso < 2) {
                 if(Logado == true){
                 this.dispose();
                 InicioUsuario.setVisible(true);
                 } else{
-                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (NivelAcesso >= 2){
                 this.dispose();
@@ -190,7 +187,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_b_loginActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        c_login.setText("ad3@unisul.br");
+        c_login.setText("ad3_colaborador@unisul.br");
         c_senha.setText("4751");
     }//GEN-LAST:event_formWindowOpened
 
