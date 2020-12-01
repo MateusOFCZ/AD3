@@ -119,6 +119,7 @@ public class Registro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        c_codigo.setText("");
 
         jLabel6.setText("Endereço");
 
@@ -339,7 +340,7 @@ public class Registro extends javax.swing.JFrame {
         
         Codigo = Codigo.replaceAll("-","");
         
-        if(Caixa == true && c_codigo.equals(null)) {
+        if(Caixa == true && c_codigo.equals("")) {
             JOptionPane.showMessageDialog(null, "Insira o código!", "Erro", JOptionPane.WARNING_MESSAGE);
         }
         
