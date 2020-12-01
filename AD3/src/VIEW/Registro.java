@@ -337,7 +337,9 @@ public class Registro extends javax.swing.JFrame {
         String Codigo = c_codigo.getText().toString();
         boolean Caixa = checkbox.isSelected();
         
-        if(Caixa == true && c_codigo.equals("")) {
+        Codigo = Codigo.replaceAll("-","");
+        
+        if(Caixa == true && c_codigo.equals(null)) {
             JOptionPane.showMessageDialog(null, "Insira o código!", "Erro", JOptionPane.WARNING_MESSAGE);
         }
         
