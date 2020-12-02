@@ -198,7 +198,7 @@ public class InicioColaborador extends javax.swing.JFrame {
         MODEL.LoginM LoginM = new MODEL.LoginM();
         CONTROLLER.InicioColaboradorC InicioColaboradorC = new CONTROLLER.InicioColaboradorC();
         
-        boolean Verificado = InicioColaboradorC.Verificar();
+        boolean Verificado = InicioColaboradorC.AtualizarDados();
         
         if(Verificado == true){
             if(LoginM.getNivelAcesso() == 1){

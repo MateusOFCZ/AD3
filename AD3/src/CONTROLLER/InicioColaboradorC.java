@@ -1,7 +1,7 @@
 package CONTROLLER;
 
 public class InicioColaboradorC extends ConfiguracoesC {
-    public boolean Verificar () {
+    public boolean AtualizarDados () {
         MODEL.LoginM LoginM = new MODEL.LoginM();
         String EMail = LoginM.getEMail();
         String Senha = LoginM.getSenha();
