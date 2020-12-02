@@ -40,6 +40,8 @@
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <Events>
+    <EventHandler event="windowStateChanged" listener="java.awt.event.WindowStateListener" parameters="java.awt.event.WindowEvent" handler="formWindowStateChanged"/>
+    <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowActivated"/>
     <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
   </Events>
   <AuxValues>
@@ -162,14 +164,6 @@
         <Property name="text" type="java.lang.String" value="Aqui voc&#xea; poder&#xe1; gerenciar as denuncias!"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="b_gerenciardenuncia">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Gerenciar Denuncias"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_gerenciardenunciaActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="b_configs">
       <Properties>
         <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
@@ -199,6 +193,14 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Voc&#xea; tem o n&#xed;vel de acesso NIVELACESSO!"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="b_gerenciardenuncia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gerenciar Denuncias"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_gerenciardenunciaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="b_gerenciarusuarios">
       <Properties>

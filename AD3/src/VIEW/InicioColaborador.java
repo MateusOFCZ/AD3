@@ -1,6 +1,9 @@
 
 package VIEW;
 
+import DAO.ConfiguracoesDAO;
+import javax.swing.JOptionPane;
+
 public class InicioColaborador extends javax.swing.JFrame {
 
     public InicioColaborador() {
@@ -20,10 +23,10 @@ public class InicioColaborador extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         Texto_BemVindo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        b_gerenciardenuncia = new javax.swing.JButton();
         b_configs = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(350, 0), new java.awt.Dimension(350, 0), new java.awt.Dimension(350, 32767));
         Texto_BemVindo1 = new javax.swing.JLabel();
+        b_gerenciardenuncia = new javax.swing.JButton();
         b_gerenciarusuarios = new javax.swing.JButton();
         b_gerenciarcodigos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -33,7 +36,15 @@ public class InicioColaborador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -67,13 +78,6 @@ public class InicioColaborador extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Aqui você poderá gerenciar as denuncias!");
 
-        b_gerenciardenuncia.setText("Gerenciar Denuncias");
-        b_gerenciardenuncia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_gerenciardenunciaActionPerformed(evt);
-            }
-        });
-
         b_configs.setText("Configurações");
         b_configs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,13 @@ public class InicioColaborador extends javax.swing.JFrame {
 
         Texto_BemVindo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Texto_BemVindo1.setText("Você tem o nível de acesso NIVELACESSO!");
+
+        b_gerenciardenuncia.setText("Gerenciar Denuncias");
+        b_gerenciardenuncia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_gerenciardenunciaActionPerformed(evt);
+            }
+        });
 
         b_gerenciarusuarios.setText("Gerenciar Usuários");
         b_gerenciarusuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +194,38 @@ public class InicioColaborador extends javax.swing.JFrame {
     }//GEN-LAST:event_b_gerenciardenunciaActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        Login Login = new Login();
         MODEL.LoginM LoginM = new MODEL.LoginM();
+        CONTROLLER.InicioColaboradorC InicioColaboradorC = new CONTROLLER.InicioColaboradorC();
+        
+        boolean Verificado = InicioColaboradorC.Verificar();
+        
+        if(Verificado == true){
+            if(LoginM.getNivelAcesso() == 1){
+                b_gerenciardenuncia.setVisible(false);
+                b_gerenciarusuarios.setVisible(false);
+                b_gerenciarcodigos.setVisible(false);
+                
+                this.dispose();
+                Login.show();
+                JOptionPane.showMessageDialog(null, "Você não tem permissão para acessar esta página!\nEntre em sua conta novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+            if(LoginM.getNivelAcesso() == 2){
+                b_gerenciardenuncia.setVisible(true);
+                b_gerenciarusuarios.setVisible(false);
+                b_gerenciarcodigos.setVisible(false);
+            }
+            if(LoginM.getNivelAcesso() == 3){
+                b_gerenciardenuncia.setVisible(true);
+                b_gerenciarusuarios.setVisible(true);
+                b_gerenciarcodigos.setVisible(false);
+            }
+            if(LoginM.getNivelAcesso() >= 4){
+                b_gerenciardenuncia.setVisible(true);
+                b_gerenciarusuarios.setVisible(true);
+                b_gerenciarcodigos.setVisible(true);
+            }
+        }
         
         String Texto1 = Texto_BemVindo.getText();
         String Texto2 = Texto_BemVindo1.getText();
@@ -209,14 +251,24 @@ public class InicioColaborador extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void b_gerenciarusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_gerenciarusuariosActionPerformed
-        MinhasDenuncias MinhasDenuncias = new MinhasDenuncias();
+        GerenciarUsuarios GerenciarUsuarios = new GerenciarUsuarios();
         this.dispose();
-        MinhasDenuncias.setVisible(true);
+        GerenciarUsuarios.setVisible(true);
     }//GEN-LAST:event_b_gerenciarusuariosActionPerformed
 
     private void b_gerenciarcodigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_gerenciarcodigosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_b_gerenciarcodigosActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        b_gerenciardenuncia.setVisible(false);
+        b_gerenciarusuarios.setVisible(false);
+        b_gerenciarcodigos.setVisible(false);
+    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments

@@ -192,7 +192,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_b_loginActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        c_login.setText("ad3_usuario@unisul.br");
+        c_login.setText("ad3_colaborador2@unisul.br");
         c_senha.setText("4751");
     }//GEN-LAST:event_formWindowOpened
 

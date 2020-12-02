@@ -21,4 +21,14 @@ public class ConfiguracoesC {
         }
         return false;
     }
+    
+    public boolean AtualizarDados(String EMail, String Senha){
+        DAO.ConfiguracoesDAO ConfiguracoesDAO = new DAO.ConfiguracoesDAO();
+        boolean Atualizado = ConfiguracoesDAO.AtualizarDados(EMail, Senha);
+        if(Atualizado == true){
+            return true;
+        } else{
+            return false;
+        }
+    }
 }

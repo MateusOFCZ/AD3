@@ -276,7 +276,12 @@ public class Configuracoes extends javax.swing.JFrame {
             if(Senha.equals("")){
                 JOptionPane.showMessageDialog(null, "Insira sua senha para salvar!", "Erro", JOptionPane.WARNING_MESSAGE);
             } else {
-                ConfiguracoesC.Atualizar(Nome, Email, RG, CPF, Endereco, Telefone, Senha);
+                boolean Atualizado = ConfiguracoesC.Atualizar(Nome, Email, RG, CPF, Endereco, Telefone, Senha);
+                if(Atualizado == true){
+                    JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!", "Status", JOptionPane.INFORMATION_MESSAGE);
+                } else{
+                    JOptionPane.showMessageDialog(null, "Erro ao atualizar as informações, tente novamente mais tarde!", "Status", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_b_salvarActionPerformed

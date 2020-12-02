@@ -40,12 +40,21 @@ public final class ConfiguracoesM {
         if(Atualizado == true){
             boolean DadosAtualizados = ConfiguracoesDAO.AtualizarDados(EMail, Senha);
             if (DadosAtualizados == true){
-                JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!", "Status", JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else{
                 return false;
             }
         } else {
+            return false;
+        }
+    }
+    
+    public boolean AtualizarDados(String EMail, String Senha){
+        DAO.ConfiguracoesDAO ConfiguracoesDAO = new DAO.ConfiguracoesDAO();
+        boolean Atualizado = ConfiguracoesDAO.AtualizarDados(EMail, Senha);
+        if(Atualizado == true){
+            return true;
+        } else{
             return false;
         }
     }
