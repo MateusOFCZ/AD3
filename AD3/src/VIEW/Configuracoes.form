@@ -151,10 +151,7 @@
                       </Group>
                       <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="b_voltar" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="b_voltar" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>

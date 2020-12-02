@@ -3,7 +3,7 @@ package MODEL;
 import DAO.LoginDAO;
 
 public class LoginM {
-    private static String ID;
+    protected static String ID;
     private static String EMail;
     private static String Senha;
     private static String NomeCompleto;

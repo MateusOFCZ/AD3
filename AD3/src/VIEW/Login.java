@@ -149,10 +149,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_inscreverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_inscreverActionPerformed
-        JOptionPane.showMessageDialog(null, "O registro está suspenso!\n\nUtilize as informações inseridas nos campos\npara efetuar login e testar o app!", "Registro", JOptionPane.INFORMATION_MESSAGE);
-        /*this.setVisible(false);
+        this.setVisible(false);
         Registro registro = new Registro();
-        registro.setVisible(true);*/
+        registro.setVisible(true);
     }//GEN-LAST:event_b_inscreverActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -163,6 +162,7 @@ public class Login extends javax.swing.JFrame {
         MODEL.LoginM LoginM = new MODEL.LoginM();
         CONTROLLER.LoginC LoginC = new CONTROLLER.LoginC();
         InicioUsuario InicioUsuario = new InicioUsuario();
+        InicioColaborador InicioColaborador = new InicioColaborador();
         
         String Login = c_login.getText().toString();
         String Senha = c_senha.getText().toString();
@@ -175,13 +175,18 @@ public class Login extends javax.swing.JFrame {
             
             if(NivelAcesso > 0 && NivelAcesso < 2) {
                 if(Logado == true){
-                this.dispose();
-                InicioUsuario.setVisible(true);
+                    this.dispose();
+                    InicioUsuario.setVisible(true);
                 } else{
                     JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (NivelAcesso >= 2){
-                //COLABORADOR INICIO
+                if(Logado == true){
+                    this.dispose();
+                    InicioColaborador.setVisible(true);
+                } else{
+                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_b_loginActionPerformed

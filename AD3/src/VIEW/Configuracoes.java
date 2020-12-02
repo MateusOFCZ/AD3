@@ -306,9 +306,17 @@ public class Configuracoes extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void b_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_voltarActionPerformed
-        InicioUsuario InicioUsuario = new InicioUsuario();
-        this.setVisible(false);
-        InicioUsuario.setVisible(true);
+        MODEL.LoginM LoginM = new MODEL.LoginM();
+        
+        if(LoginM.getNivelAcesso() < 2){
+            InicioUsuario InicioUsuario = new InicioUsuario();
+            this.setVisible(false);
+            InicioUsuario.setVisible(true);
+        } else if (LoginM.getNivelAcesso() >= 2) {
+            InicioColaborador InicioColaborador = new InicioColaborador();
+            this.setVisible(false);
+            InicioColaborador.setVisible(true);
+        }
     }//GEN-LAST:event_b_voltarActionPerformed
 
     /**

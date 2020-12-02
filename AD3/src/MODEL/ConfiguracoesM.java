@@ -2,7 +2,7 @@ package MODEL;
 
 import javax.swing.JOptionPane;
 
-public class ConfiguracoesM {
+public final class ConfiguracoesM {
     public boolean VerificarConta (String EMail, String CPF, String RG) {
         DAO.ConfiguracoesDAO ConfiguracoesDAO = new DAO.ConfiguracoesDAO();
         MODEL.LoginM LoginM = new MODEL.LoginM();

@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package VIEW;
 
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author MarcoJr
- */
-public class MinhasDenuncias extends javax.swing.JFrame {
+public class GerenciarDenuncias extends javax.swing.JFrame {
 
     /**
      * Creates new form Denuncia
      */
-    public MinhasDenuncias() {
+    public GerenciarDenuncias() {
         initComponents();
     }
 
@@ -48,6 +39,13 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         b_salvar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_denuncias = new javax.swing.JTable();
+        c_status = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        c_prioridade_filtro = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        c_status_filtro = new javax.swing.JComboBox<>();
+        b_procurar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -66,7 +64,7 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Minhas Denúncias");
+        jLabel3.setText("Gerenciar Denúncias");
         jLabel3.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -105,6 +103,7 @@ public class MinhasDenuncias extends javax.swing.JFrame {
             }
         });
 
+        c_descricao.setEditable(false);
         c_descricao.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         c_descricao.setToolTipText("");
         c_descricao.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +121,10 @@ public class MinhasDenuncias extends javax.swing.JFrame {
             }
         });
 
+        c_cidade.setEditable(false);
+
+        c_bairro.setEditable(false);
+
         b_cancelar.setText("Cancelar");
         b_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,26 +141,26 @@ public class MinhasDenuncias extends javax.swing.JFrame {
 
         tb_denuncias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Endereço", "Descrição", "Prioridade", "Status"
+                "ID", "Usuário", "Endereço", "Descrição", "Prioridade", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -180,7 +183,42 @@ public class MinhasDenuncias extends javax.swing.JFrame {
             tb_denuncias.getColumnModel().getColumn(2).setResizable(false);
             tb_denuncias.getColumnModel().getColumn(3).setResizable(false);
             tb_denuncias.getColumnModel().getColumn(4).setResizable(false);
+            tb_denuncias.getColumnModel().getColumn(5).setResizable(false);
         }
+
+        c_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Não Verificado", "Verificado", "Descartado" }));
+        c_status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_statusc_prioridadeActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Status");
+
+        c_prioridade_filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas", "Baixa", "Média", "Alta" }));
+        c_prioridade_filtro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_prioridade_filtroc_prioridadeActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Prioridade");
+
+        jLabel9.setText("Status");
+
+        c_status_filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Não Verificado", "Verificado", "Descartado" }));
+        c_status_filtro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_status_filtroc_prioridadeActionPerformed(evt);
+            }
+        });
+
+        b_procurar.setText("Procurar");
+        b_procurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_procurarActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Menu");
 
@@ -208,7 +246,7 @@ public class MinhasDenuncias extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(348, 348, 348)
+                        .addGap(348, 375, Short.MAX_VALUE)
                         .addComponent(b_salvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(b_cancelar)
@@ -219,24 +257,42 @@ public class MinhasDenuncias extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addGap(15, 15, 15))
+                        .addGap(15, 42, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(c_prioridade5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(c_prioridade5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(c_status, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(c_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
-                        .addGap(61, 61, 61)
+                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(c_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79)
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4)
                             .addComponent(c_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(c_prioridade_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(c_status_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(b_procurar)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -244,14 +300,27 @@ public class MinhasDenuncias extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(c_prioridade_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(c_status_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_procurar))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_prioridade5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(c_prioridade5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -273,7 +342,7 @@ public class MinhasDenuncias extends javax.swing.JFrame {
                     .addComponent(b_voltar)
                     .addComponent(b_cancelar)
                     .addComponent(b_salvar))
-                .addGap(70, 70, 70))
+                .addContainerGap())
         );
 
         pack();
@@ -293,15 +362,15 @@ public class MinhasDenuncias extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void b_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_voltarActionPerformed
-        InicioUsuario InicioUsuario = new InicioUsuario();
+        InicioColaborador InicioColaborador = new InicioColaborador();
         this.dispose();
-        InicioUsuario.setVisible(true);
+        InicioColaborador.setVisible(true);
     }//GEN-LAST:event_b_voltarActionPerformed
 
     private void b_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelarActionPerformed
         int Linha = tb_denuncias.getSelectedRow();
 
-        String Cidade = (String) tb_denuncias.getValueAt(Linha, 1);
+        String Cidade = (String) tb_denuncias.getValueAt(Linha, 2);
         String[] NewCidade = Cidade.split(",");
 
         c_estado.setSelectedItem(0);
@@ -309,20 +378,24 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         c_cidade.setText(NewCidade[0]);
         c_bairro.setText(NewCidade[1]);
         
-        c_descricao.setText((String) tb_denuncias.getValueAt(Linha, 2));
-        c_prioridade5.setSelectedItem(tb_denuncias.getValueAt(Linha, 3));
+        c_descricao.setText((String) tb_denuncias.getValueAt(Linha, 3));
+        c_prioridade5.setSelectedItem(tb_denuncias.getValueAt(Linha, 4));
+        c_status.setSelectedItem(tb_denuncias.getValueAt(Linha, 5));
     }//GEN-LAST:event_b_cancelarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        CONTROLLER.MinhasDenunciasC MinhasDenunciasC = new CONTROLLER.MinhasDenunciasC();
-        tb_denuncias.setModel(MinhasDenunciasC.ListarDenuncias());
+        CONTROLLER.GerenciarDenunciasC GerenciarDenunciasC = new CONTROLLER.GerenciarDenunciasC();
+        
+        String PrioridadeFiltro = (String) c_prioridade_filtro.getSelectedItem();
+        String StatusFiltro = (String) c_status_filtro.getSelectedItem();
+        
+        tb_denuncias.setModel(GerenciarDenunciasC.ListarDenuncias(PrioridadeFiltro, StatusFiltro));
     }//GEN-LAST:event_formWindowOpened
 
     private void tb_denunciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_denunciasMouseClicked
         int Linha = tb_denuncias.getSelectedRow();
 
-        String Cidade = (String) tb_denuncias.getValueAt(Linha, 1);
-        Cidade = Cidade.replaceAll(" ", "");
+        String Cidade = (String) tb_denuncias.getValueAt(Linha, 2);
         String[] NewCidade = Cidade.split(",");
 
         c_estado.setSelectedItem(0);
@@ -330,8 +403,9 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         c_cidade.setText(NewCidade[0]);
         c_bairro.setText(NewCidade[1]);
         
-        c_descricao.setText((String) tb_denuncias.getValueAt(Linha, 2));
-        c_prioridade5.setSelectedItem(tb_denuncias.getValueAt(Linha, 3));
+        c_descricao.setText((String) tb_denuncias.getValueAt(Linha, 3));
+        c_prioridade5.setSelectedItem(tb_denuncias.getValueAt(Linha, 4));
+        c_status.setSelectedItem(tb_denuncias.getValueAt(Linha, 5));
     }//GEN-LAST:event_tb_denunciasMouseClicked
 
     private void c_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_prioridadeActionPerformed
@@ -339,23 +413,21 @@ public class MinhasDenuncias extends javax.swing.JFrame {
     }//GEN-LAST:event_c_prioridadeActionPerformed
 
     private void b_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_salvarActionPerformed
-        CONTROLLER.MinhasDenunciasC MinhasDenunciasC = new CONTROLLER.MinhasDenunciasC();
+        CONTROLLER.GerenciarDenunciasC GerenciarDenunciasC = new CONTROLLER.GerenciarDenunciasC();
         int Linha = tb_denuncias.getSelectedRow();
         
+        String Status = (String) c_status.getSelectedItem();
         String Prioridade = (String) c_prioridade5.getSelectedItem();
-        String Cidade = c_cidade.getText().toString();
-        String Bairro = c_bairro.getText().toString();
-        String Estado = c_estado.getSelectedItem().toString();
-        String Descricao = c_descricao.getText().toString();
+        int Usuario = (int) tb_denuncias.getValueAt(Linha, 1);
         int ID = (int) tb_denuncias.getValueAt(Linha, 0);
         
-        if(Cidade.equals("") || Bairro.equals("") || Descricao.equals("")){
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.WARNING_MESSAGE);
-        } else {
-            boolean Atualizado = MinhasDenunciasC.Salvar(Prioridade, Cidade, Bairro, Estado, Descricao, ID);
+        boolean Atualizado = GerenciarDenunciasC.Salvar(Prioridade, Status, Usuario, ID);
+        
+        String PrioridadeFiltro = (String) c_prioridade_filtro.getSelectedItem();
+        String StatusFiltro = (String) c_status_filtro.getSelectedItem();
         
         if(Atualizado == true){
-            tb_denuncias.setModel(MinhasDenunciasC.ListarDenuncias());
+            tb_denuncias.setModel(GerenciarDenunciasC.ListarDenuncias(PrioridadeFiltro, StatusFiltro));
             c_bairro.setText("");
             c_cidade.setText("");
             c_descricao.setText("");
@@ -364,8 +436,28 @@ public class MinhasDenuncias extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!", "Atualizado", JOptionPane.INFORMATION_MESSAGE);
         }
-        }
     }//GEN-LAST:event_b_salvarActionPerformed
+
+    private void c_statusc_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_statusc_prioridadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_statusc_prioridadeActionPerformed
+
+    private void c_prioridade_filtroc_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_prioridade_filtroc_prioridadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_prioridade_filtroc_prioridadeActionPerformed
+
+    private void c_status_filtroc_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_status_filtroc_prioridadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_status_filtroc_prioridadeActionPerformed
+
+    private void b_procurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_procurarActionPerformed
+        CONTROLLER.GerenciarDenunciasC GerenciarDenunciasC = new CONTROLLER.GerenciarDenunciasC();
+        
+        String PrioridadeFiltro = (String) c_prioridade_filtro.getSelectedItem();
+        String StatusFiltro = (String) c_status_filtro.getSelectedItem();
+        
+        tb_denuncias.setModel(GerenciarDenunciasC.ListarDenuncias(PrioridadeFiltro, StatusFiltro));
+    }//GEN-LAST:event_b_procurarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,14 +476,18 @@ public class MinhasDenuncias extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MinhasDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MinhasDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MinhasDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MinhasDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -400,13 +496,14 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MinhasDenuncias().setVisible(true);
+                new GerenciarDenuncias().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cancelar;
+    private javax.swing.JButton b_procurar;
     private javax.swing.JButton b_salvar;
     private javax.swing.JButton b_voltar;
     private javax.swing.JTextField c_bairro;
@@ -414,12 +511,18 @@ public class MinhasDenuncias extends javax.swing.JFrame {
     private javax.swing.JTextField c_descricao;
     private javax.swing.JComboBox<String> c_estado;
     private javax.swing.JComboBox<String> c_prioridade5;
+    private javax.swing.JComboBox<String> c_prioridade_filtro;
+    private javax.swing.JComboBox<String> c_status;
+    private javax.swing.JComboBox<String> c_status_filtro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
