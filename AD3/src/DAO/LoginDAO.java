@@ -33,7 +33,7 @@ public class LoginDAO {
                 
                 return true;
             }else{
-                JOptionPane.showMessageDialog(null, "Usuário ou Senha inválido!", "Erro", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuário ou senha inválido ou conta suspendida por um colaborador!", "Erro", JOptionPane.WARNING_MESSAGE);
                 return false;
             }
         } catch (SQLException erro) {

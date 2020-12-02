@@ -25,7 +25,6 @@ public class Login extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AD3");
@@ -87,9 +86,6 @@ public class Login extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Sobre");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -178,22 +174,21 @@ public class Login extends javax.swing.JFrame {
                     this.dispose();
                     InicioUsuario.setVisible(true);
                 } else{
-                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (NivelAcesso >= 2){
                 if(Logado == true){
                     this.dispose();
                     InicioColaborador.setVisible(true);
                 } else{
-                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     }//GEN-LAST:event_b_loginActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        c_login.setText("ad3_colaborador2@unisul.br");
-        c_senha.setText("4751");
+        
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -244,7 +239,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;

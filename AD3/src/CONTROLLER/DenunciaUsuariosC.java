@@ -1,6 +1,6 @@
 package CONTROLLER;
 
-public class DenunciaUsuarioC {
+public class DenunciaUsuariosC {
     public boolean Denunciar (String Estado, String Cidade, String Bairro, String Prioridade, String Descricao){
         MODEL.DenunciaUsuarioM DenunciaUsuarioM = new MODEL.DenunciaUsuarioM();
         

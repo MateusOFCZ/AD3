@@ -55,7 +55,6 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -70,7 +69,7 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Gerenciar Denúncias");
+        jLabel3.setText("Gerenciar Usuários");
         jLabel3.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -162,6 +161,9 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
             tb_usuarios.getColumnModel().getColumn(3).setResizable(false);
             tb_usuarios.getColumnModel().getColumn(4).setResizable(false);
             tb_usuarios.getColumnModel().getColumn(5).setResizable(false);
+            tb_usuarios.getColumnModel().getColumn(6).setResizable(false);
+            tb_usuarios.getColumnModel().getColumn(7).setResizable(false);
+            tb_usuarios.getColumnModel().getColumn(8).setResizable(false);
         }
 
         c_infos_filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "E-Mail", "Nome Completo", "CPF", "RG", "Endereço", "Telefone" }));
@@ -228,9 +230,6 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Sobre");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -384,7 +383,9 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        System.exit(0);
+        Login Login = new Login();
+        this.dispose();
+        Login.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void b_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_voltarActionPerformed
@@ -586,7 +587,6 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
