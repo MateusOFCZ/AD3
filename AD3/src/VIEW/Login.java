@@ -149,7 +149,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_inscreverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_inscreverActionPerformed
-        JOptionPane.showMessageDialog(null, "O registro está suspenso!", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "O registro está suspenso!\n\nUtilize as informações inseridas nos campos\npara efetuar login e testar o app!", "Registro", JOptionPane.INFORMATION_MESSAGE);
         /*this.setVisible(false);
         Registro registro = new Registro();
         registro.setVisible(true);*/
