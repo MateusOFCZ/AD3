@@ -149,9 +149,10 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_inscreverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_inscreverActionPerformed
-        this.setVisible(false);
+        JOptionPane.showMessageDialog(null, "O registro está suspenso!", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        /*this.setVisible(false);
         Registro registro = new Registro();
-        registro.setVisible(true);
+        registro.setVisible(true);*/
     }//GEN-LAST:event_b_inscreverActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
