@@ -6,7 +6,7 @@ Para utilizar este projeto é preciso configurar todas as classes do pacote "DAO
 Este projeto já está com um banco de dados para testes, utilize as informações de login abaixo:
  
 |   Nível de Acesso   |       E-Mail        | Senha |        Tipo        |                               Descrição                               |
-|:-------------------:|:-------------------:|:-----:|:------------------:|:---------------------------------------------------------------------:|
+|:-------------------:|:-------------------:|:-----:|:------------------:|:----------------------------------------------------------------------|
 |          0          |    ad3_0@unisul.br  |  123  |  Usuário Suspenso  | O usuário não poderá fazer o login, irá exibir uma mensagem de aviso. |
 |          1          |    ad3_1@unisul.br  |  123  |       Usuário      |            Pode fazer denúncias e gerenciar suas denúncias.           |
 |          2          |    ad3_2@unisul.br  |  123  |     Colaborador    |                     Pode gerenciar denúncias.                         |
