@@ -89,6 +89,7 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         jLabel5.setText("Nivel de Acesso");
 
         c_nivelacesso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4" }));
+        c_nivelacesso.setEnabled(false);
         c_nivelacesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_prioridadeActionPerformed(evt);
@@ -362,14 +363,15 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(4, 4, 4)
-                        .addComponent(c_nivelacesso, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(txt_score)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(7, 7, 7)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(c_nivelacesso)
+                    .addComponent(c_score))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_voltar)
@@ -409,6 +411,15 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         CONTROLLER.GerenciarUsuariosC GerenciaUsuariosC = new CONTROLLER.GerenciarUsuariosC();
+        MODEL.LoginM LoginM = new MODEL.LoginM();
+        
+        int NivelAcessoColaborador = LoginM.getNivelAcesso();
+        
+        if(NivelAcessoColaborador > 3){
+            c_nivelacesso.setEnabled(true);
+        } else{
+            c_nivelacesso.setEnabled(false);
+        }
         
         tb_usuarios.setModel(GerenciaUsuariosC.ListarUsuarios());
     }//GEN-LAST:event_formWindowOpened
@@ -433,6 +444,7 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
     private void b_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_salvarActionPerformed
         CONTROLLER.GerenciarUsuariosC GerenciarUsuariosC = new CONTROLLER.GerenciarUsuariosC();
         int Linha = tb_usuarios.getSelectedRow();
+        
         
         String Score = c_score.getText().toString();
         String NivelAcesso = c_nivelacesso.getSelectedItem().toString();

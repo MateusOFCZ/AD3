@@ -31,9 +31,14 @@ public class LoginDAO {
                 LoginM.setScore(res.getString("score"));
                 LoginM.setNivelAcesso(res.getInt("nivel_acesso"));
                 
-                return true;
+                if(res.getInt("nivel_acesso") == 0){
+                    JOptionPane.showMessageDialog(null, "Conta suspendida por um colaborador!", "Erro", JOptionPane.WARNING_MESSAGE);
+                    return false;
+                } else{
+                    return true;
+                }
             }else{
-                JOptionPane.showMessageDialog(null, "Usuário ou senha inválido ou conta suspendida por um colaborador!", "Erro", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuário ou senha inválido!", "Erro", JOptionPane.WARNING_MESSAGE);
                 return false;
             }
         } catch (SQLException erro) {
