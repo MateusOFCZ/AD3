@@ -180,14 +180,13 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "E-Mail ou Senha inválidos ou conta suspensa!\nVerifique as informações e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (NivelAcesso >= 2){
-                this.dispose();
-                InicioUsuario.setVisible(true);
+                //COLABORADOR INICIO
             }
         }
     }//GEN-LAST:event_b_loginActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        c_login.setText("ad3_colaborador@unisul.br");
+        c_login.setText("ad3_usuario@unisul.br");
         c_senha.setText("4751");
     }//GEN-LAST:event_formWindowOpened
 
