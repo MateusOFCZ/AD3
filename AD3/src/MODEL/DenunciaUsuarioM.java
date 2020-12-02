@@ -5,21 +5,13 @@ public class DenunciaUsuarioM {
         DAO.DenunciaUsuarioDAO DenunciaUsuarioDAO = new DAO.DenunciaUsuarioDAO();
         MODEL.LoginM LoginM = new MODEL.LoginM();
         
+        Cidade = Cidade.replaceAll(",", "");
+        Bairro = Bairro.replaceAll(",", "");
+        
         int Usuario = Integer.parseInt(LoginM.getID());
-        int NewPrioridade = 1;
         String Endereco = Cidade + ", " + Bairro + ", " + Estado;
         
-        if(Prioridade.equals("Baixo")){
-            NewPrioridade = 1;
-        }
-        if(Prioridade.equals("Médio")){
-            NewPrioridade = 2;
-        }
-        if(Prioridade.equals("Alto")){
-            NewPrioridade = 3;
-        }
-        
-        boolean Denunciado = DenunciaUsuarioDAO.Denunciar(Endereco, NewPrioridade, Descricao, Usuario);
+        boolean Denunciado = DenunciaUsuarioDAO.Denunciar(Endereco, Prioridade, Descricao, Usuario);
         
         if (Denunciado == true){
             return true;

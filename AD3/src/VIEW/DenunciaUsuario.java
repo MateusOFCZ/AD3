@@ -40,9 +40,10 @@ public class DenunciaUsuario extends javax.swing.JFrame {
         c_descricao = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         b_enviar = new javax.swing.JButton();
-        b_cancelar = new javax.swing.JButton();
+        b_voltar = new javax.swing.JButton();
         c_cidade = new javax.swing.JTextField();
         c_bairro = new javax.swing.JTextField();
+        b_cancelar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -88,7 +89,7 @@ public class DenunciaUsuario extends javax.swing.JFrame {
 
         jLabel5.setText("Prioridade");
 
-        c_prioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baixo", "Médio", "Alto" }));
+        c_prioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baixa", "Média", "Alta" }));
         c_prioridade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_prioridadeActionPerformed(evt);
@@ -109,6 +110,13 @@ public class DenunciaUsuario extends javax.swing.JFrame {
         b_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_enviarActionPerformed(evt);
+            }
+        });
+
+        b_voltar.setText("Voltar");
+        b_voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_voltarActionPerformed(evt);
             }
         });
 
@@ -163,9 +171,12 @@ public class DenunciaUsuario extends javax.swing.JFrame {
                                     .addComponent(jLabel4)
                                     .addGap(83, 83, 83))
                                 .addComponent(c_bairro))))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(b_enviar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_cancelar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(b_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -195,11 +206,12 @@ public class DenunciaUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(b_enviar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(b_cancelar)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_enviar)
+                    .addComponent(b_cancelar)
+                    .addComponent(b_voltar))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,11 +234,11 @@ public class DenunciaUsuario extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void b_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelarActionPerformed
+    private void b_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_voltarActionPerformed
         InicioUsuario InicioUsuario = new InicioUsuario();
         this.dispose();
         InicioUsuario.setVisible(true);
-    }//GEN-LAST:event_b_cancelarActionPerformed
+    }//GEN-LAST:event_b_voltarActionPerformed
 
     private void b_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_enviarActionPerformed
         CONTROLLER.DenunciaUsuarioC DenunciaUsuarioC = new CONTROLLER.DenunciaUsuarioC();
@@ -253,6 +265,14 @@ public class DenunciaUsuario extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_b_enviarActionPerformed
+
+    private void b_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelarActionPerformed
+        c_bairro.setText("");
+        c_cidade.setText("");
+        c_descricao.setText("");
+        c_estado.setSelectedIndex(0);
+        c_prioridade.setSelectedIndex(0);
+    }//GEN-LAST:event_b_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +313,7 @@ public class DenunciaUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cancelar;
     private javax.swing.JButton b_enviar;
+    private javax.swing.JButton b_voltar;
     private javax.swing.JTextField c_bairro;
     private javax.swing.JTextField c_cidade;
     private javax.swing.JTextField c_descricao;

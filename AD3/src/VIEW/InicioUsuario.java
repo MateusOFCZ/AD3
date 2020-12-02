@@ -24,6 +24,7 @@ public class InicioUsuario extends javax.swing.JFrame {
         b_configs = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(350, 0), new java.awt.Dimension(350, 0), new java.awt.Dimension(350, 32767));
         Texto_BemVindo1 = new javax.swing.JLabel();
+        b_denuncia1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -82,6 +83,13 @@ public class InicioUsuario extends javax.swing.JFrame {
         Texto_BemVindo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Texto_BemVindo1.setText("Seu score é de SCORE pontos!");
 
+        b_denuncia1.setText("Minhas Denúncias");
+        b_denuncia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_denuncia1ActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("Menu");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +117,7 @@ public class InicioUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Texto_BemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -119,9 +127,11 @@ public class InicioUsuario extends javax.swing.JFrame {
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(b_denuncia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(b_denuncia1)
+                .addGap(18, 18, 18)
                 .addComponent(b_configs)
                 .addGap(63, 63, 63))
         );
@@ -141,7 +151,8 @@ public class InicioUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_denuncia)
-                    .addComponent(b_configs))
+                    .addComponent(b_configs)
+                    .addComponent(b_denuncia1))
                 .addGap(98, 98, 98))
         );
 
@@ -184,6 +195,12 @@ public class InicioUsuario extends javax.swing.JFrame {
         this.dispose();
         Login.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void b_denuncia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_denuncia1ActionPerformed
+        MinhasDenuncias MinhasDenuncias = new MinhasDenuncias();
+        this.dispose();
+        MinhasDenuncias.setVisible(true);
+    }//GEN-LAST:event_b_denuncia1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,6 +245,7 @@ public class InicioUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel Texto_BemVindo1;
     private javax.swing.JButton b_configs;
     private javax.swing.JButton b_denuncia;
+    private javax.swing.JButton b_denuncia1;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

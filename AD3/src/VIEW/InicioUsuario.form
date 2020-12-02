@@ -58,7 +58,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
-          <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+          <Component id="jLabel2" alignment="1" pref="482" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Texto_BemVindo" max="32767" attributes="0"/>
@@ -71,9 +71,11 @@
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-              <Component id="b_denuncia" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="b_denuncia" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="b_denuncia1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="b_configs" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
           </Group>
@@ -96,6 +98,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="b_denuncia" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="b_configs" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b_denuncia1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
           </Group>
@@ -191,6 +194,14 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Seu score &#xe9; de SCORE pontos!"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="b_denuncia1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Minhas Den&#xfa;ncias"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_denuncia1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

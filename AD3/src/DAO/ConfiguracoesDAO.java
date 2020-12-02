@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class ConfiguracoesDAO {
+    
     public boolean VerificarConta (String Email, String CPF, String RG, String Telefone, int ID){
         String SQL = "SELECT * FROM tb_usuario WHERE email = ? and id != ?";
         String SQL0 = "SELECT * FROM tb_usuario WHERE cpf = ? and id != ?";
