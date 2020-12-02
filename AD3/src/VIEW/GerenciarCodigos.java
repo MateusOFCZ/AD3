@@ -348,7 +348,7 @@ public class GerenciarCodigos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O código deve ter até 6 digítos!", "Erro", JOptionPane.INFORMATION_MESSAGE);
         } else {
             if (Usos.length() > 4 || Usos.equals("") || Integer.parseInt(Usos) > 1000 || Integer.parseInt(Usos) < 0){
-                JOptionPane.showMessageDialog(null, "Os usos deve ter até 4 digítos entre 0 e 1000!", "Erro", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Os usos deve ter até 4 digítos entre 0 e 1000!\n(NÃO INICIE O CÓDIGO COM '0')", "Erro", JOptionPane.INFORMATION_MESSAGE);
             } else{
                 boolean Atualizado = GerenciarCodigosC.Salvar(Integer.parseInt(Usos), Integer.parseInt(NivelAcesso), Integer.parseInt(ID), Codigo);
 
