@@ -83,6 +83,7 @@ public class GerenciarDenuncias extends javax.swing.JFrame {
         jLabel1.setText("Estado");
 
         c_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Santa Catarina", "São Paulo", "Paraná", "Rio Grande do Sul" }));
+        c_estado.setEnabled(false);
         c_estado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_estadoActionPerformed(evt);
