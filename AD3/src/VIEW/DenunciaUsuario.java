@@ -37,18 +37,20 @@ public class DenunciaUsuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         c_prioridade = new javax.swing.JComboBox<>();
-        c_descricao = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         b_enviar = new javax.swing.JButton();
         b_voltar = new javax.swing.JButton();
         c_cidade = new javax.swing.JTextField();
         c_bairro = new javax.swing.JTextField();
         b_cancelar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        c_descricao = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 650));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -95,14 +97,6 @@ public class DenunciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        c_descricao.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        c_descricao.setToolTipText("");
-        c_descricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_descricaoActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Descreva a Situação");
 
         b_enviar.setText("Enviar");
@@ -126,6 +120,10 @@ public class DenunciaUsuario extends javax.swing.JFrame {
             }
         });
 
+        c_descricao.setColumns(20);
+        c_descricao.setRows(5);
+        jScrollPane1.setViewportView(c_descricao);
+
         jMenu1.setText("Menu");
 
         jMenuItem2.setText("Sair");
@@ -148,32 +146,31 @@ public class DenunciaUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(c_prioridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(c_descricao)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(c_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1))
-                            .addGap(100, 100, 100)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(c_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(79, 79, 79)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(83, 83, 83))
-                                .addComponent(c_bairro))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(c_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(c_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(83, 83, 83))
+                            .addComponent(c_bairro)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(b_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(b_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,8 +198,8 @@ public class DenunciaUsuario extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_enviar)
                     .addComponent(b_cancelar)
@@ -221,10 +218,6 @@ public class DenunciaUsuario extends javax.swing.JFrame {
     private void c_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_prioridadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_c_prioridadeActionPerformed
-
-    private void c_descricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_descricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_descricaoActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Login Login = new Login();
@@ -314,7 +307,7 @@ public class DenunciaUsuario extends javax.swing.JFrame {
     private javax.swing.JButton b_voltar;
     private javax.swing.JTextField c_bairro;
     private javax.swing.JTextField c_cidade;
-    private javax.swing.JTextField c_descricao;
+    private javax.swing.JTextArea c_descricao;
     private javax.swing.JComboBox<String> c_estado;
     private javax.swing.JComboBox<String> c_prioridade;
     private javax.swing.JLabel jLabel1;
@@ -327,5 +320,6 @@ public class DenunciaUsuario extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
