@@ -68,35 +68,35 @@ public class GerenciarUsuariosM {
         if(Selecionado.equals("Colaboradores")){
             
             if(Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE nivel_acesso >= 2 and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE nivel_acesso >= 2 and id != " + Usuario;
             }
             
             if(Filtro.equals("ID") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE nivel_acesso >= 2 and id = " + Procurar + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE nivel_acesso >= 2 and id = " + Procurar + " and id != " + Usuario;
             }
 
             if(Filtro.equals("E-Mail") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and email LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and email LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
             
             if(Filtro.equals("Nome Completo") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and nome_completo LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and nome_completo LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
             
             if(Filtro.equals("CPF") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and cpf LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and cpf LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
             
             if(Filtro.equals("RG") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and rg LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and rg LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
             
             if(Filtro.equals("Endereço") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and endereco LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and endereco LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
             
             if(Filtro.equals("Telefone") && !Procurar.equals("")){
-                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, score, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and telefone LIKE '" + Procurar + "%'" + " and id != " + Usuario;
+                SQL = "SELECT id, email, nome_completo, cpf, rg, endereco, telefone, nivel_acesso FROM tb_usuario WHERE  nivel_acesso >= 2 and telefone LIKE '" + Procurar + "%'" + " and id != " + Usuario;
             }
         }
         

@@ -421,14 +421,24 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
     private void tb_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_usuariosMouseClicked
         int Linha = tb_usuarios.getSelectedRow();
         
-        c_email.setText((String) tb_usuarios.getValueAt(Linha, 1));
-        c_nomecompleto.setText((String) tb_usuarios.getValueAt(Linha, 2));
-        c_cpf.setText((String) tb_usuarios.getValueAt(Linha, 3));
-        c_rg.setText((String) tb_usuarios.getValueAt(Linha, 4));
-        c_endereco.setText((String) tb_usuarios.getValueAt(Linha, 5));
-        c_telefone.setText((String) tb_usuarios.getValueAt(Linha, 6));
-        c_score.setText((String) tb_usuarios.getValueAt(Linha, 7).toString());
-        c_nivelacesso.setSelectedItem(tb_usuarios.getValueAt(Linha, 8).toString());
+        if(c_tipo_filtro.getSelectedItem().equals("Colaboradores")){
+            c_email.setText((String) tb_usuarios.getValueAt(Linha, 1));
+            c_nomecompleto.setText((String) tb_usuarios.getValueAt(Linha, 2));
+            c_cpf.setText((String) tb_usuarios.getValueAt(Linha, 3));
+            c_rg.setText((String) tb_usuarios.getValueAt(Linha, 4));
+            c_endereco.setText((String) tb_usuarios.getValueAt(Linha, 5));
+            c_telefone.setText((String) tb_usuarios.getValueAt(Linha, 6));
+            c_nivelacesso.setSelectedItem(tb_usuarios.getValueAt(Linha, 7).toString());
+        } else{
+            c_email.setText((String) tb_usuarios.getValueAt(Linha, 1));
+            c_nomecompleto.setText((String) tb_usuarios.getValueAt(Linha, 2));
+            c_cpf.setText((String) tb_usuarios.getValueAt(Linha, 3));
+            c_rg.setText((String) tb_usuarios.getValueAt(Linha, 4));
+            c_endereco.setText((String) tb_usuarios.getValueAt(Linha, 5));
+            c_telefone.setText((String) tb_usuarios.getValueAt(Linha, 6));
+            c_score.setText((String) tb_usuarios.getValueAt(Linha, 7).toString());
+            c_nivelacesso.setSelectedItem(tb_usuarios.getValueAt(Linha, 8).toString());
+        }
     }//GEN-LAST:event_tb_usuariosMouseClicked
 
     private void c_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_prioridadeActionPerformed
@@ -486,33 +496,13 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_b_procurarActionPerformed
 
     private void c_tipo_filtroc_prioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_tipo_filtroc_prioridadeActionPerformed
+        CONTROLLER.GerenciarUsuariosC GerenciarUsuariosC = new CONTROLLER.GerenciarUsuariosC();
+        
+        String Procurar = c_procurar.getText().toString();
+        String Filtro = c_infos_filtro.getSelectedItem().toString();
         String Selecionado = c_tipo_filtro.getSelectedItem().toString();
         
-        if(Selecionado.equals("Usuários")){
-            c_email.setText("");
-            c_nomecompleto.setText("");
-            c_cpf.setText("");
-            c_rg.setText("");
-            c_endereco.setText("");
-            c_telefone.setText("");
-            c_score.setText("");
-            c_nivelacesso.setSelectedItem("0");
-            
-            txt_score.setVisible(true);
-            c_score.setVisible(true);
-        } else {
-            c_email.setText("");
-            c_nomecompleto.setText("");
-            c_cpf.setText("");
-            c_rg.setText("");
-            c_endereco.setText("");
-            c_telefone.setText("");
-            c_score.setText("");
-            c_nivelacesso.setSelectedItem("0");
-            
-            txt_score.setVisible(false);
-            c_score.setVisible(false);
-        }
+        tb_usuarios.setModel(GerenciarUsuariosC.ListarUsuarios(Procurar, Filtro, Selecionado));
     }//GEN-LAST:event_c_tipo_filtroc_prioridadeActionPerformed
 
     /**

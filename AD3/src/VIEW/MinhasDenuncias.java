@@ -322,8 +322,10 @@ public class MinhasDenuncias extends javax.swing.JFrame {
         int Linha = tb_denuncias.getSelectedRow();
 
         String Cidade = (String) tb_denuncias.getValueAt(Linha, 1);
-        Cidade = Cidade.replaceAll(" ", "");
         String[] NewCidade = Cidade.split(",");
+        
+        NewCidade[0] = NewCidade[0].replaceFirst(" ", "");
+        NewCidade[1] = NewCidade[1].replaceFirst(" ", "");
 
         c_estado.setSelectedItem(0);
         

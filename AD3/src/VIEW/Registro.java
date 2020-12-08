@@ -182,15 +182,13 @@ public class Registro extends javax.swing.JFrame {
                                 .addComponent(c_senha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
                         .addGap(282, 282, 282)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(c_cpf)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(c_cpf)
+                            .addComponent(c_codigo)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(checkbox)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(c_codigo))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(checkbox))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -336,7 +334,10 @@ public class Registro extends javax.swing.JFrame {
                     }
                 } else if (Caixa == false){
                     boolean Registrado = RegistroC.Registrar(Nome, Email, RG, CPF, Endereco, Telefone, Senha, Codigo, 1);
-                    Login.setVisible(true);
+                    if(Registrado == true){
+                        this.dispose();
+                        Login.setVisible(true);
+                    }
                 }
             }
         }
