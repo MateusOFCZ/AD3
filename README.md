@@ -2,8 +2,8 @@
 
 # Como Utilizar
 Para utilizar este projeto em é preciso configurar todas as classes do pacote *DAO*, altere as informações do banco de dados no método *getConexao*, não se esqueça de inserir o *[SQL](https://github.com/MateusOFCZ/AD3/blob/main/Adicionais/SQL.sql)* em seu servidor!
-É necessário o Plugin [*Regex*](https://github.com/MateusOFCZ/AD3/blob/main/Adicionais/Regex.nbm) e o [*MySQLConnector*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/mysql-connector-java-8.0.22.jar).
-> Recomendamos a utilização do [*MySQLConnector*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/mysql-connector-java-8.0.22.jar) e do Plugin [*Regex*](https://github.com/MateusOFCZ/AD3/blob/main/Adicionais/Regex.nbm), para evitar erros na execução do projeto!
+É necessário o Plugin [*Regex*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/Regex.nbm) e o [*MySQLConnector*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/mysql-connector-java-8.0.22.jar).
+> Recomendamos a utilização do [*MySQLConnector*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/mysql-connector-java-8.0.22.jar) e do Plugin [*Regex*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/Regex.nbm), para evitar erros na execução do projeto!
 > 
 > Fique a vontade para abrir uma *issue* para tirar dúvidas ou obter ajuda!
 
