@@ -17,7 +17,7 @@ Para utilizar este projeto em é preciso configurar todas as classes do pacote *
 Abra o NetBeans, clique em *Tools*/*Ferramentas* selecione *Plugin*/*Plug-ins*.
 !["Tools"/"Ferramentas" > "Plugin"/"Plug-ins"](https://i.imgur.com/HgOzFo0.png)
 
-Selecione *Downloaded*/*Obtidos Por Download* clique em *Add Plugins...*/*Adicionar Plug-ins...* adicione o arquivo [*Regex.nbm*](https://github.com/MateusOFCZ/AD3/blob/main/Adicionais/Regex.nbm)!
+Selecione *Downloaded*/*Obtidos Por Download* clique em *Add Plugins...*/*Adicionar Plug-ins...* adicione o arquivo [*Regex.nbm*](https://github.com/MateusOFCZ/AD3/raw/main/Adicionais/Regex.nbm)!
 !["Downloaded"/"Obtidos Por Download" > "Add Plugins..."/"Adicionar Plug-ins..." > "Regex.nbm"](https://i.imgur.com/v1JYg5F.png)
 
 # Informações de Teste
