@@ -493,9 +493,11 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         String Selecionado = c_tipo_filtro.getSelectedItem().toString();
         
         if(Selecionado.equals("Usuários")){
+            txt_score.setVisible(true);
             c_score.setVisible(true);
         } else {
             c_score.setVisible(false);
+            txt_score.setVisible(false);
         }
         
         tb_usuarios.setModel(GerenciarUsuariosC.ListarUsuarios(Procurar, Filtro, Selecionado));
@@ -509,9 +511,11 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         String Selecionado = c_tipo_filtro.getSelectedItem().toString();
         
         if(Selecionado.equals("Usuários")){
+            txt_score.setVisible(true);
             c_score.setVisible(true);
         } else {
             c_score.setVisible(false);
+            txt_score.setVisible(false);
         }
         
         tb_usuarios.setModel(GerenciarUsuariosC.ListarUsuarios(Procurar, Filtro, Selecionado));
