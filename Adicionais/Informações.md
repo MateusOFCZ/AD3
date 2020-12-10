@@ -1,4 +1,3 @@
-
 # **MODEL, VIEW, CONTROLLER e DAO:**
 **Localização:** Pacotes do Projeto.
 
