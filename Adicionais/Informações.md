@@ -1,7 +1,7 @@
 # **MODEL, VIEW, CONTROLLER e DAO:**
 **Localização:** Pacotes do Projeto.
 
-- **VIEW:** Instância objetos da camada *CONTROL* e ebvia dados brutos informados pelo usuário ou ações solicitadas pelo mesmo.
+- **VIEW:** Instância objetos da camada *CONTROL* e envia dados brutos informados pelo usuário ou ações solicitadas pelo mesmo.
 - **CONTROL:** Instancia objetos de camada *MODEL* e envia objetos completos para processamento.
 - **MODEL:** Trata os dados, chama métodos de DAO e envia objetos para pessistência.
 - **DAO:** Manipula o *Banco de Dados* para efetuar a persistência de dados.
