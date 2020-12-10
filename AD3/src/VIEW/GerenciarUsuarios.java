@@ -492,6 +492,12 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         String Filtro = c_infos_filtro.getSelectedItem().toString();
         String Selecionado = c_tipo_filtro.getSelectedItem().toString();
         
+        if(Selecionado.equals("Usuários")){
+            c_score.setVisible(true);
+        } else {
+            c_score.setVisible(false);
+        }
+        
         tb_usuarios.setModel(GerenciarUsuariosC.ListarUsuarios(Procurar, Filtro, Selecionado));
     }//GEN-LAST:event_b_procurarActionPerformed
 
@@ -501,6 +507,12 @@ public class GerenciarUsuarios extends javax.swing.JFrame {
         String Procurar = c_procurar.getText().toString();
         String Filtro = c_infos_filtro.getSelectedItem().toString();
         String Selecionado = c_tipo_filtro.getSelectedItem().toString();
+        
+        if(Selecionado.equals("Usuários")){
+            c_score.setVisible(true);
+        } else {
+            c_score.setVisible(false);
+        }
         
         tb_usuarios.setModel(GerenciarUsuariosC.ListarUsuarios(Procurar, Filtro, Selecionado));
     }//GEN-LAST:event_c_tipo_filtroc_prioridadeActionPerformed
